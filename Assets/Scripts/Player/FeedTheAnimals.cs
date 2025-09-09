@@ -11,18 +11,19 @@ using UnityEngine;
  *  - Update() → Executes the PlayerMovement methods per frame.
  *  - OnFeedAnimalEnter() → ???
  *  - FeedAnimal() → Feeds animal???
- *  Author: Sufian St. Denny+ Bruce Gustin 
+ *  Author: Sufian St. Denny
  *  Version: August 27, 2025
  */
 public class FeedTheAnimals : MonoBehaviour
 {
-    [SerializeField] private Food;
-    private float Force;
-    void OnFeedAnimalEnter()
+    [SerializeField] private GameObject food;
+    private float maxForce;
+    private AudioSource audiaSource;
+    public void OnFeedInput()
     {
 
     }
-    void FeedAnimal()
+    private void FeedAnimal()
     {
 
     }
