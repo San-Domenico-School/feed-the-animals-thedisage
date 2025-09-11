@@ -23,11 +23,11 @@ using UnityEngine.InputSystem;
 
 public class PlayerMovementController : MonoBehaviour
 {
-    [SerializeField] private int playerSpeed;
-    private float widthOfField;
-    private float centerToEdge;
+
+    [SerializeField] private float playerSpeed;
     private float moveDirection;
-    
+    private float centerToEdge;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -39,20 +39,24 @@ public class PlayerMovementController : MonoBehaviour
     {
         PlayerMovement();
     }
-    //Event-Driven Method that sends player read value to DetriminePLayerDirection
+
     public void OnMovementInput(InputAction.CallbackContext ctx)
     {
-        DeterminePlayerDirection(ctx.ReadValue<Vector2>());
-        //Dynamic method that sends value to player 
+        DeterminesPlayerDirection(ctx.ReadValue<Vector2>());
     }
-    private void DeterminePlayerDirection(Vector2 value)
+
+
+
+    private void DeterminesPlayerDirection(Vector2 value)
     {
-        moveDirection = InputValue.x; //assigns the x-input value to movedirection
+        moveDirection = value.x;
     }
-    //Process movement logic 
-     private void PlayerMovement()
+
+    //Process movement logic
+    private void PlayerMovement()
     {
         transform.Translate(Vector3.right * playerSpeed * moveDirection * Time.deltaTime);
+
     }
 
 }
