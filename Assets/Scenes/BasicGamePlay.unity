@@ -932,6 +932,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FeedTheAnimals
   food: {fileID: 126446, guid: c2f4b43f266dc11439efef86830dafb4, type: 3}
+  maxForce: 20
+  audioSource: {fileID: 0}
 --- !u!1 &2144803725
 GameObject:
   m_ObjectHideFlags: 0
