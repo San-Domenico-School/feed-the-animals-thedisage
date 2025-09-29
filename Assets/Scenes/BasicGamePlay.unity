@@ -907,7 +907,19 @@ MonoBehaviour:
     m_ActionId: dd2a2393-3ddb-4307-b02e-ca0df7dd4bd4
     m_ActionName: 'Player/Movement[/Keyboard/comma,/Keyboard/period]'
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1936512709}
+        m_TargetAssemblyTypeName: FeedTheAnimals, Assembly-CSharp
+        m_MethodName: OnFeedInput
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: fa1948e5-6b4b-47f5-b194-2c04d0cc76a9
     m_ActionName: Player/Feed
   - m_PersistentCalls:
