@@ -24,7 +24,7 @@ public class FeedTheAnimals : MonoBehaviour
 
     private void FeedAnimal(string name)
     {
-        Vector3 position = transform.position + new Vector3(0, 2, 0); //Sets position 2 meters above center of Player
+        Vector3 position = transform.position + new Vector3(0, 3, 0); //Sets position 2 meters above center of Player
         GameObject foodInstance = Instantiate(food, position, Quaternion.identity);  //Adds food prefab to world
         Rigidbody foodRB = foodInstance.GetComponent<Rigidbody>();    //Set rigidbody of food
         foodRB.AddForce(Vector3.forward * maxForce, ForceMode.Impulse);  //Adds a forward impulse force to the                      
