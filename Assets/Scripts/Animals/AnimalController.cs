@@ -18,7 +18,7 @@ public class AnimalControler : MonoBehaviour
     }
     private bool IsFoodItEats()
     {
-
+        return false;
     }
     private void OnTriggerEnter(other Collider)
     {
