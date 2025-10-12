@@ -1,5 +1,4 @@
 using UnityEngine;
-
 public class AnimalControler : MonoBehaviour
 {
     [SerializeField] GameObject foodItEats;
@@ -7,25 +6,8 @@ public class AnimalControler : MonoBehaviour
     private float lowerBound;
     private bool isOutOfScene;
     private bool notHungry;
-    
-    private void MoveForward()
-    {
 
-    }
-    private void DeleteOutOfScene()
-    {
-
-    }
-    private bool IsFoodItEats()
-    {
-        return false;
-    }
-    private void OnTriggerEnter(other Collider)
-    {
-        
-    }
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         
@@ -36,4 +18,26 @@ public class AnimalControler : MonoBehaviour
     {
         
     }
+    
+    private void MoveForward()
+    {
+
+    }
+
+    private void DeleteOutOfScene()
+    {
+
+    }
+
+    private bool IsFoodItEats()
+    {
+        return false;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        
+    }
+
+
 }
