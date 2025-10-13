@@ -81,7 +81,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 854e93169029f436ab7c4453c2a6b6e7,
         type: 3}
       propertyPath: m_Name
-      value: kibble
+      value: Kibble
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
