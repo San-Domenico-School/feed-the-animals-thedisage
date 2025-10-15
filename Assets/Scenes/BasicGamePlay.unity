@@ -913,7 +913,7 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 100046, guid: 0e1316a3e46fdb349b6ff648610a1d71,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1936512709}
+      addedObject: {fileID: 1936512708}
   m_SourcePrefab: {fileID: 100100000, guid: 0e1316a3e46fdb349b6ff648610a1d71, type: 3}
 --- !u!4 &1936512704 stripped
 Transform:
@@ -984,7 +984,7 @@ MonoBehaviour:
     m_ActionName: 'Player/Movement[/Keyboard/comma,/Keyboard/period]'
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1936512709}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: FeedTheAnimals, Assembly-CSharp
         m_MethodName: OnFeedInput
         m_Mode: 0
@@ -1007,7 +1007,7 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
---- !u!114 &1936512709
+--- !u!114 &1936512708
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1019,9 +1019,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3dc8e63160118418dbe6a378293d9ca4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FeedTheAnimals
-  food: {fileID: 126446, guid: c2f4b43f266dc11439efef86830dafb4, type: 3}
-  maxForce: 75
+  maxForce: 0
   audioSource: {fileID: 0}
+  foods:
+  - {fileID: 126446, guid: c2f4b43f266dc11439efef86830dafb4, type: 3}
+  - {fileID: 8645667404381372486, guid: 4ce96533041994cce9c853de9d72a410, type: 3}
+  - {fileID: 101770, guid: c13306d1f1d9a1a489199ef77f9dba89, type: 3}
+  - {fileID: 646151965044568097, guid: da3306282c35e408e850d784419da031, type: 3}
 --- !u!1001 &1991934088
 PrefabInstance:
   m_ObjectHideFlags: 0

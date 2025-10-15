@@ -16,16 +16,16 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 public class FeedTheAnimals : MonoBehaviour
 {
-    [SerializeField] private GameObject food;
+
     [SerializeField] private float maxForce;
     [SerializeField] private AudioSource audioSource;
-
+    [SerializeField] GameObject[] foods;
     //public fields
 
-    private void FeedAnimal(string name)
+    private void FeedAnimal(int index, int foodCount, bool allFood)
     {
         Vector3 position = transform.position + new Vector3(0, 3, 0); //Sets position 2 meters above center of Player
-        GameObject foodInstance = Instantiate(food, position, Quaternion.identity);  //Adds food prefab to world
+        GameObject foodInstance = Instantiate(foods[index], position, Quaternion.identity);  //Adds food prefab to world
         Rigidbody foodRB = foodInstance.GetComponent<Rigidbody>();    //Set rigidbody of food
         foodRB.AddForce(Vector3.forward * maxForce, ForceMode.Impulse);  //Adds a forward impulse force to the                      
         audioSource.Play();                                                                 //food's rigidbody
@@ -37,8 +37,30 @@ public class FeedTheAnimals : MonoBehaviour
         if (ctx.started)
         {
             //Send name of button pressed to FeedAnimal
-            FeedAnimal(ctx.control.name);
+            string keyName = ctx.control.name;
+            SelectFood(keyName);
+        }
+    }
 
+        public void SelectFood(string keyName)
+    {   
+        switch (keyName)
+        {
+            case "Z":
+                FeedAnimal(0, 1, false);
+                break;
+            case "X":
+                FeedAnimal(1, 1, false);
+                break;
+            case "C":
+                FeedAnimal(2, 15, false);
+                break;
+            case "V":
+                FeedAnimal(3, 25, false);
+                break;
+            case " ":
+                FeedAnimal(3, 24, true);
+                break;
         }
     }
 

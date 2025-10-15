@@ -1,5 +1,4 @@
 {
-    {
     // --- Enable new C# Dev Kit language server ---
     "dotnet.server.useOmnisharp": false,
     "dotnet.server.useRoslyn": true,
@@ -18,83 +17,47 @@
     "editor.acceptSuggestionOnEnter": "on",
     "editor.inlineSuggest.enabled": true,
     "editor.suggest.snippetsPreventQuickSuggestions": false,
+
+    // --- File associations ---
     "files.associations": {
-        "*.cs": "csharp"
+        "*.cs": "csharp",
+        "*.asset": "yaml",
+        "*.meta": "yaml",
+        "*.prefab": "yaml",
+        "*.unity": "yaml"
     },
 
     // --- Optional performance tweak ---
     "dotnet.server.logging.level": "information",
 
     // --- (Optional) If you had OmniSharp logs or errors lingering ---
-    "omnisharp.enable": false
-}
+    "omnisharp.enable": false,
 
+    // --- File explorer organization ---
+    "explorer.fileNesting.enabled": true,
+    "explorer.fileNesting.patterns": {
+        "*.sln": "*.csproj"
+    },
+
+    // --- Unity project exclusion ---
     "files.exclude": {
         "**/.DS_Store": true,
         "**/.git": true,
         "**/.vs": true,
-        "**/.gitmodules": true,
-        "**/.vsconfig": true,
-        "**/*.booproj": true,
-        "**/*.pidb": true,
-        "**/*.suo": true,
-        "**/*.user": true,
-        "**/*.userprefs": true,
-        "**/*.unityproj": true,
         "**/*.dll": true,
         "**/*.exe": true,
-        "**/*.pdf": true,
-        "**/*.mid": true,
-        "**/*.midi": true,
-        "**/*.wav": true,
-        "**/*.gif": true,
-        "**/*.ico": true,
-        "**/*.jpg": true,
-        "**/*.jpeg": true,
-        "**/*.png": true,
-        "**/*.psd": true,
-        "**/*.tga": true,
-        "**/*.tif": true,
-        "**/*.tiff": true,
-        "**/*.3ds": true,
-        "**/*.3DS": true,
-        "**/*.fbx": true,
-        "**/*.FBX": true,
-        "**/*.lxo": true,
-        "**/*.LXO": true,
-        "**/*.ma": true,
-        "**/*.MA": true,
-        "**/*.obj": true,
-        "**/*.OBJ": true,
-        "**/*.asset": true,
-        "**/*.cubemap": true,
-        "**/*.flare": true,
-        "**/*.mat": true,
         "**/*.meta": true,
         "**/*.prefab": true,
         "**/*.unity": true,
-        "build/": true,
-        "Build/": true,
         "Library/": true,
-        "library/": true,
-        "obj/": true,
+        "Temp/": true,
         "Obj/": true,
+        "Build/": true,
         "Logs/": true,
-        "logs/": true,
         "ProjectSettings/": true,
-        "UserSettings/": true,
-        "temp/": true,
-        "Temp/": true
+        "UserSettings/": true
     },
-    "files.associations": {
-        "*.asset": "yaml",
-        "*.meta": "yaml",
-        "*.prefab": "yaml",
-        "*.unity": "yaml",
-    },
-    "explorer.fileNesting.enabled": true,
-    "explorer.fileNesting.patterns": {
-        "*.sln": "*.csproj",
-    },
+
     "dotnet.defaultSolution": "feed-the-animals-thedisage.sln"
 }
+
