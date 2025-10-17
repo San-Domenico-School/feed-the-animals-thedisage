@@ -25,10 +25,34 @@ public class FeedTheAnimals : MonoBehaviour
     private void FeedAnimal(int index, int foodCount, bool allFood)
     {
         Vector3 position = transform.position + new Vector3(0, 3, 0); //Sets position 2 meters above center of Player
-        GameObject foodInstance = Instantiate(foods[index], position, Quaternion.identity);  //Adds food prefab to world
-        Rigidbody foodRB = foodInstance.GetComponent<Rigidbody>();    //Set rigidbody of food
-        foodRB.AddForce(Vector3.forward * maxForce, ForceMode.Impulse);  //Adds a forward impulse force to the                      
-        audioSource.Play();                                                                 //food's rigidbody
+                            
+        audioSource.Play(); //food's rigidbody
+        for (int i = 0; i >= foodCount;)
+        {
+            GameObject foodsInstance = Instantiate(foods[index], position, Quaternion.identity);
+            Rigidbody foodsRB = foodsInstance.GetComponent<Rigidbody>(); //Set rigidbody of food
+            if (foodsRB != null)
+            {
+                float magnitude = maxForce * Random.Range(0.6f, 1f);
+                float xDirection = Random.Range(-0.1f, 0.1f);
+                foodsRB.AddForce(new Vector3(xDirection, 0, 1) * magnitude, ForceMode.Impulse); //Adds a forward impulse force to the audioSource.Play()
+            }
+            if (allFood)
+            {
+                foreach(GameObject food in foods)
+                {
+                    foodsInstance = Instantiate(food, position, Quaternion.identity);
+                    foodsRB = foodsInstance.GetComponent<Rigidbody>(); //Set rigidbody of food
+                    if (foodsRB != null)
+                    {
+                        float magnitude = maxForce * Random.Range(0.6f, 1f);
+                        float xDirection = Random.Range(-0.1f, 0.1f);
+                        foodsRB.AddForce(new Vector3(xDirection, 0, 1) * magnitude, ForceMode.Impulse); //Adds a forward impulse force to the audioSource.Play()
+                    }
+                }
+            }
+            
+        }
     }
     //dynamic method that gets binding from player input map
     public void OnFeedInput(InputAction.CallbackContext ctx)
