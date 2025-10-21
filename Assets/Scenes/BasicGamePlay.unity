@@ -905,15 +905,15 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 100046, guid: 0e1316a3e46fdb349b6ff648610a1d71,
         type: 3}
       insertIndex: -1
+      addedObject: {fileID: 1936512708}
+    - targetCorrespondingSourceObject: {fileID: 100046, guid: 0e1316a3e46fdb349b6ff648610a1d71,
+        type: 3}
+      insertIndex: -1
       addedObject: {fileID: 1936512707}
     - targetCorrespondingSourceObject: {fileID: 100046, guid: 0e1316a3e46fdb349b6ff648610a1d71,
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1936512706}
-    - targetCorrespondingSourceObject: {fileID: 100046, guid: 0e1316a3e46fdb349b6ff648610a1d71,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1936512708}
   m_SourcePrefab: {fileID: 100100000, guid: 0e1316a3e46fdb349b6ff648610a1d71, type: 3}
 --- !u!4 &1936512704 stripped
 Transform:
@@ -984,7 +984,7 @@ MonoBehaviour:
     m_ActionName: 'Player/Movement[/Keyboard/comma,/Keyboard/period]'
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1936512708}
         m_TargetAssemblyTypeName: FeedTheAnimals, Assembly-CSharp
         m_MethodName: OnFeedInput
         m_Mode: 0

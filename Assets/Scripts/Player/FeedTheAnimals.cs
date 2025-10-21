@@ -21,69 +21,56 @@ public class FeedTheAnimals : MonoBehaviour
     [SerializeField] private AudioSource audioSource;
     [SerializeField] GameObject[] foods;
     //public fields
-
-    private void FeedAnimal(int index, int foodCount, bool allFood)
-    {
-        Vector3 position = transform.position + new Vector3(0, 3, 0); //Sets position 2 meters above center of Player
-                            
-        audioSource.Play(); //food's rigidbody
-        for (int i = 0; i >= foodCount;)
-        {
-            GameObject foodsInstance = Instantiate(foods[index], position, Quaternion.identity);
-            Rigidbody foodsRB = foodsInstance.GetComponent<Rigidbody>(); //Set rigidbody of food
-            if (foodsRB != null)
-            {
-                float magnitude = maxForce * Random.Range(0.6f, 1f);
-                float xDirection = Random.Range(-0.1f, 0.1f);
-                foodsRB.AddForce(new Vector3(xDirection, 0, 1) * magnitude, ForceMode.Impulse); //Adds a forward impulse force to the audioSource.Play()
-            }
-            if (allFood)
-            {
-                foreach(GameObject food in foods)
-                {
-                    foodsInstance = Instantiate(food, position, Quaternion.identity);
-                    foodsRB = foodsInstance.GetComponent<Rigidbody>(); //Set rigidbody of food
-                    if (foodsRB != null)
-                    {
-                        float magnitude = maxForce * Random.Range(0.6f, 1f);
-                        float xDirection = Random.Range(-0.1f, 0.1f);
-                        foodsRB.AddForce(new Vector3(xDirection, 0, 1) * magnitude, ForceMode.Impulse); //Adds a forward impulse force to the audioSource.Play()
-                    }
-                }
-            }
-            
-        }
-    }
-    //dynamic method that gets binding from player input map
     public void OnFeedInput(InputAction.CallbackContext ctx)
-    {
+    {Debug.Log($"ctx started");
         //Only feeds animals on start press.  Ignores ctx.proceed and ctx.cancel.
         if (ctx.started)
         {
             //Send name of button pressed to FeedAnimal
             string keyName = ctx.control.name;
             SelectFood(keyName);
+            
         }
     }
 
-        public void SelectFood(string keyName)
+    private void FeedAnimal(int index, int foodCount, bool allFood)
+    {
+        Vector3 position = transform.position + new Vector3(0, 2, 0); //Sets position 3 meters above center of Player
+                            
+        audioSource.Play(); //food's rigidbody
+        for (int i = 0; i <= foodCount; i++)
+        {
+            Debug.Log($"For loop");
+            GameObject foodsInstance = Instantiate(foods[index], position, Quaternion.identity);
+            Rigidbody foodsRB = foodsInstance.GetComponent<Rigidbody>(); //Set rigidbody of food
+            foodsRB.AddForce(Vector3.forward*maxForce, ForceMode.Impulse); //Adds a forward impulse force to the audioSource.Play()
+        }
+    }
+    //dynamic method that gets binding from player input map
+
+    public void SelectFood(string keyName)
     {   
         switch (keyName)
         {
-            case "Z":
+            case "z":
                 FeedAnimal(0, 1, false);
+                Debug.Log($"z pressed");
                 break;
-            case "X":
+            case "x":
                 FeedAnimal(1, 1, false);
+                Debug.Log($"x pressed");
                 break;
-            case "C":
+            case "c":
                 FeedAnimal(2, 15, false);
+                Debug.Log($"c pressed");
                 break;
-            case "V":
+            case "v":
                 FeedAnimal(3, 25, false);
+                Debug.Log($"v pressed");
                 break;
             case " ":
-                FeedAnimal(3, 24, true);
+                FeedAnimal(3, 39, true);
+                Debug.Log($"space pressed");
                 break;
         }
     }
