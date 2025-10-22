@@ -22,7 +22,8 @@ public class FeedTheAnimals : MonoBehaviour
     [SerializeField] GameObject[] foods;
     //public fields
     public void OnFeedInput(InputAction.CallbackContext ctx)
-    {Debug.Log($"ctx started");
+    {
+        Debug.Log($"ctx started");
         //Only feeds animals on start press.  Ignores ctx.proceed and ctx.cancel.
         if (ctx.started)
         {
