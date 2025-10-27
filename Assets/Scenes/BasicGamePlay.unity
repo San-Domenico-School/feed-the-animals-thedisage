@@ -1019,8 +1019,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3dc8e63160118418dbe6a378293d9ca4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FeedTheAnimals
-  maxForce: 0
-  audioSource: {fileID: 0}
+  maxForce: 100
   foods:
   - {fileID: 126446, guid: c2f4b43f266dc11439efef86830dafb4, type: 3}
   - {fileID: 8645667404381372486, guid: 4ce96533041994cce9c853de9d72a410, type: 3}

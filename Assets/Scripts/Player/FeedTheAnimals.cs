@@ -18,7 +18,7 @@ public class FeedTheAnimals : MonoBehaviour
 {
 
     [SerializeField] private float maxForce;
-    [SerializeField] private AudioSource audioSource;
+    
     [SerializeField] GameObject[] foods;
     //public fields
     public void OnFeedInput(InputAction.CallbackContext ctx)
@@ -36,16 +36,31 @@ public class FeedTheAnimals : MonoBehaviour
 
     private void FeedAnimal(int index, int foodCount, bool allFood)
     {
-        Vector3 position = transform.position + new Vector3(0, 2, 0); //Sets position 3 meters above center of Player
-                            
-        audioSource.Play(); //food's rigidbody
-        for (int i = 0; i <= foodCount; i++)
+        Vector3 position = transform.position + new Vector3(0, 3, 0); //Sets position 3 meters above center of Player
+
+        if (allFood)
+        {
+            Debug.Log($"allFood started");
+            //loop thru all food prefabs
+                for (int i = 0; i < foodCount; i++)
         {
             Debug.Log($"For loop");
             GameObject foodsInstance = Instantiate(foods[index], position, Quaternion.identity);
             Rigidbody foodsRB = foodsInstance.GetComponent<Rigidbody>(); //Set rigidbody of food
-            foodsRB.AddForce(Vector3.forward*maxForce, ForceMode.Impulse); //Adds a forward impulse force to the audioSource.Play()
+            foodsRB.AddForce(Vector3.forward * maxForce, ForceMode.Impulse);
         }
+            foreach (GameObject foodPrefab in foods)
+            {
+            
+                for (int i = 0; i < foodCount; i++)
+                {
+                    GameObject foodInstance = Instantiate(foodPrefab, position, Quaternion.identity);
+                    Rigidbody foodRB = foodInstance.GetComponent<Rigidbody>();
+                    foodRB.AddForce(Vector3.forward * maxForce, ForceMode.Impulse);
+                }
+            }
+        }
+
     }
     //dynamic method that gets binding from player input map
 
@@ -69,9 +84,9 @@ public class FeedTheAnimals : MonoBehaviour
                 FeedAnimal(3, 25, false);
                 Debug.Log($"v pressed");
                 break;
-            case " ":
-                FeedAnimal(3, 39, true);
+            case "space":
                 Debug.Log($"space pressed");
+                FeedAnimal(3, 25, true);
                 break;
         }
     }
