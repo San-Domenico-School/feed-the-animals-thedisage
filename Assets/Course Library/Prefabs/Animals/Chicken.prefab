@@ -238,7 +238,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78b85f54d20a446bb8593c690775ba1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AnimalControler
-  foodItEats: {fileID: 0}
+  fooditeats: {fileID: 0}
   animalSpeed: 10
 --- !u!1 &130812
 GameObject:
