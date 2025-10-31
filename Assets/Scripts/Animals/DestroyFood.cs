@@ -18,7 +18,8 @@ public class DestroyFood : MonoBehaviour
     {
         yield return new
 WaitForSeconds(secondsInScene);
-        Destroy(gameObject);
+        Destroy(
+            gameObject);
     }
 
 }

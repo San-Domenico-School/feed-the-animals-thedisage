@@ -1,8 +1,8 @@
-using Unity
+
 using UnityEngine;
 public class AnimalController : MonoBehaviour
 {
-        [SerializeField] GameObject fooditeats;
+    [SerializeField] GameObject fooditeats;
     [SerializeField] float animalSpeed;
     private float lowerBoundl = 15.0f;
     private bool isOutofScene;
