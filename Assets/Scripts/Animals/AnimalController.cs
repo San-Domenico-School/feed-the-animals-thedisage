@@ -1,37 +1,49 @@
-using Unity
+
+/*
+ * Class: AnimalController
+ * Purpose: Controlling Animals
+ * Component of: Animals
+ * Fie
+ *  Behaviors
+ *  -MoveForward → Moves Animal
+ *  -DeleteOutOfScene → Deletes Animal out of scene
+ *  - OnFeedAnimalEnter() → Instantiates food
+ *  - FeedAnimal() → Runs FeedAnimal on press
+ *  Author: Sufian St. Denny
+ *  Version: October 27, 2025
+ */
 using UnityEngine;
-public class AnimalController : MonoBehaviour
+public class AnimalControler : MonoBehaviour
 {
-        [SerializeField] GameObject fooditeats;
+    [SerializeField] GameObject foodItEats;
     [SerializeField] float animalSpeed;
-    private float lowerBoundl = 15.0f;
-    private bool isOutofScene;
+    private float lowerBound;
+    private bool isOutOfScene;
     private bool notHungry;
 
-
-    private void Start()
+     // Start is called once before the first execution of Update after the MonoBehaviour is created
+    void Start()
     {
-
+        lowerBound = -15f;
     }
 
-    private void Update()
+    // Update is called once per frame
+    void Update()
     {
+        MoveForward();
         DeleteOutOfScene();
     }
-
+    
     private void MoveForward()
     {
-        transform.Translate(Vector3.forward * animalSpeed * Time.deltaTime);
+
     }
 
     private void DeleteOutOfScene()
     {
-        if (transform.position.z < 15.0f)
-        {
-            MoveForward();
-        }
+     
+      if (transform.position.z < lowerBound)
 
-        else
         {
             Destroy(gameObject);
         }
@@ -39,33 +51,30 @@ public class AnimalController : MonoBehaviour
 
     private bool IsFoodItEats(string foodTriggered)
     {
-        string foodItEatsName = fooditeats.name;
-        // Remove "(Clone)" if it exists
+        string foodItEatsName = foodItEats.name;
+        //remove Clones
         int cloneIndex = foodTriggered.IndexOf("(Clone)");
         if (cloneIndex != -1)
         {
             foodTriggered = foodTriggered.Substring(0, cloneIndex).Trim();
         }
-        // Compare the cleaned names
         return foodTriggered.Equals(foodItEatsName);
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Food") && !notHungry)
+        if(other.gameObject.CompareTag("Food")&& !notHungry)
         {
+            IsFoodItEats();
+          if (IsFoodItEats = true)
+            {
+                Debug.Log($"Is FoodItEats");
+            }
+              
 
-            if (IsFoodItEats(other.name))
-            {
-                Debug.Log("fooditeats");
-            }
-            else
-            {
-                Debug.Log("fooditdoesn'teat");
-                Destroy(gameObject);
-            }
         }
-
+        
     }
-}
 
+
+}
