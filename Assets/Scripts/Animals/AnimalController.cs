@@ -2,9 +2,9 @@
 using UnityEngine;
 public class AnimalController : MonoBehaviour
 {
-    [SerializeField] GameObject fooditeats;
+    [SerializeField] GameObject foodItEats;
     [SerializeField] float animalSpeed;
-    private float lowerBoundl = 15.0f;
+    private float lowerBound = -22.0f;
     private bool isOutofScene;
     private bool notHungry;
 
@@ -26,7 +26,7 @@ public class AnimalController : MonoBehaviour
 
     private void DeleteOutOfScene()
     {
-        if (transform.position.z < 15.0f)
+        if (transform.position.z > lowerBound)
         {
             MoveForward();
         }
@@ -39,33 +39,37 @@ public class AnimalController : MonoBehaviour
 
     private bool IsFoodItEats(string foodTriggered)
     {
-        string foodItEatsName = fooditeats.name;
+        string foodItEatsName = foodItEats.name;
+
         // Remove "(Clone)" if it exists
         int cloneIndex = foodTriggered.IndexOf("(Clone)");
         if (cloneIndex != -1)
         {
             foodTriggered = foodTriggered.Substring(0, cloneIndex).Trim();
         }
+
         // Compare the cleaned names
         return foodTriggered.Equals(foodItEatsName);
     }
 
+    // --- Step 6: Implement OnTriggerEnter ---
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Food") && !notHungry)
         {
-
-            if (IsFoodItEats(other.name))
+            // Check if this is the food it eats
+            if (IsFoodItEats(other.gameObject.name))
             {
-                Debug.Log("fooditeats");
+                Debug.Log("Food It Eats");
             }
             else
             {
-                Debug.Log("fooditdoesn'teat");
-                Destroy(gameObject);
+                Debug.Log("Food It Doesn't Eat");
             }
-        }
 
+            // After eating or touching any food
+            notHungry = true;
+            Destroy(other.gameObject);
+        }
     }
 }
-

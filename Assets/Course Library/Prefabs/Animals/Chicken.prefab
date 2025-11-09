@@ -224,8 +224,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 10.106553, y: 42.880676, z: 22.450996}
+  m_Center: {x: 0.5059199, y: 20.940338, z: 1.0118378}
 --- !u!114 &-5300188630487241583
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -238,7 +238,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78b85f54d20a446bb8593c690775ba1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AnimalControler
-  fooditeats: {fileID: 0}
+  foodItEats: {fileID: 101770, guid: c13306d1f1d9a1a489199ef77f9dba89, type: 3}
   animalSpeed: 10
 --- !u!1 &130812
 GameObject:

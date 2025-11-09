@@ -36,7 +36,7 @@ public class FeedTheAnimals : MonoBehaviour
 
     private void FeedAnimal(int index, int foodCount, bool allFood)
     {
-        Vector3 position = transform.position + new Vector3(0, 3, 0); //Sets position 3 meters above center of Player
+        Vector3 position = transform.position + new Vector3(0, 2, 0); //Sets position 3 meters above center of Player
 
         if (allFood)
         {

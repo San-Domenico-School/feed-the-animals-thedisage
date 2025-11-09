@@ -5,9 +5,9 @@ public class GameManager : MonoBehaviour
 {
     [SerializeField] GameObject[] animalPrefab;
     public int animalsFeed;
-    private float zStart = 38f;
-    private float xSpawnRange = 25f;
-    private float startDelay = 2f;
+    private float zStart = 38.0f;
+    private float xSpawnRange = 25.0f;
+    private float startDelay = 2.0f;
     private float repeatRate = 1.5f;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -26,13 +26,9 @@ public class GameManager : MonoBehaviour
         {
             GameOver();
         }
-
-
-
-
     }
     private void GameOver()
     {
-        CancelInvoke;
+        CancelInvoke("SpawnAnimal");
     }
 }
