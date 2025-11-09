@@ -4,7 +4,7 @@ using UnityEngine.SocialPlatforms.Impl;
 
 public class Scoreboard : MonoBehaviour
 {
-    public Scoreboard Instance;
+    static public Scoreboard Instance;
     [SerializeField] TextMeshProUGUI scoreText;
     [SerializeField] TextMeshProUGUI remainingText;
     private int score;
