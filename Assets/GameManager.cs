@@ -22,9 +22,9 @@ public class GameManager : MonoBehaviour
         float xPosition = Random.Range(-xSpawnRange, xSpawnRange);
         Instantiate(animalPrefab[choice], new Vector3(xPosition, 0, zStart), Quaternion.Euler(0, 180, 0));
         animalsFeed--;
-        if (animalsFeed == 0)
+        if (Scoreboard.Instance.GetAnimalsRemaining() == 0)
         {
-            GameOver();
+          GameOver();
         }
     }
     private void GameOver()

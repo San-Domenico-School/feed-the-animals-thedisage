@@ -1,4 +1,4 @@
-
+using System;
 using UnityEngine;
 public class AnimalController : MonoBehaviour
 {
@@ -6,11 +6,12 @@ public class AnimalController : MonoBehaviour
     [SerializeField] int animalSpeed;
     private float lowerBound = -22.0f;
     private bool notHungry;
+    private bool hasBeenDeleted = false;
 
 
     private void Start()
     {
-
+       
     }
 
     private void Update()
@@ -32,6 +33,12 @@ public class AnimalController : MonoBehaviour
 
         else
         {
+            if (!hasBeenDeleted)
+            {
+
+                Scoreboard.Instance.UpdateRemaining(0);
+                hasBeenDeleted = true;
+            }
             Destroy(gameObject);
         }
     }
@@ -72,7 +79,10 @@ public class AnimalController : MonoBehaviour
             else
             {
                 // Wrong food → subtract points (or zero)
-                Scoreboard.Instance.UpdateScore(-5);  // Change -5 as needed
+                // Convert animalSpeed to float so Mathf.Sqrt works
+             int penalty = Mathf.RoundToInt(-5f * Mathf.Sqrt(animalSpeed));
+             Scoreboard.Instance.UpdateScore(penalty);
+
             }
 
             // After eating or touching any food

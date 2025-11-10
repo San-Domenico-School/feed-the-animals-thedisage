@@ -11,6 +11,7 @@ public class Scoreboard : MonoBehaviour
     private int animalsRemaining = 100;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
+
     private void Awake()
     {
         if (Instance == null)
@@ -21,8 +22,11 @@ public class Scoreboard : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        // Set initial UI text
     }
-    public void UpdateScore(int changeInScore)
+
+   public void UpdateScore(int changeInScore)
     {
         score += changeInScore;
         if (scoreText != null)
@@ -31,8 +35,10 @@ public class Scoreboard : MonoBehaviour
         }
 
     }
-    public void UpdateRemaining()
+    public void UpdateRemaining(int remaining)
     {
+        animalsRemaining -= remaining;
+        Debug.Log($"UpdateRemaining Called");
         animalsRemaining--;
         if (animalsRemainingText != null)
         {
