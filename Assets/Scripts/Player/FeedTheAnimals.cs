@@ -38,6 +38,13 @@ public class FeedTheAnimals : MonoBehaviour
     {
         Vector3 position = transform.position + new Vector3(0, 2, 0); //Sets position 3 meters above center of Player
 
+        for (int i = 0; i < foodCount; i++)
+                {
+                    GameObject foodInstance = Instantiate(foods[index], position, Quaternion.identity);
+                    Rigidbody foodRB = foodInstance.GetComponent<Rigidbody>();
+                    foodRB.AddForce(Vector3.forward * maxForce, ForceMode.Impulse);
+                }
+        
         if (allFood)
         {
             Debug.Log($"allFood started");
