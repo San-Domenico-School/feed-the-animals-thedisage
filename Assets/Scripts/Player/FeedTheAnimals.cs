@@ -18,8 +18,8 @@ public class FeedTheAnimals : MonoBehaviour
 {
 
     [SerializeField] private float maxForce;
-    
     [SerializeField] GameObject[] foods;
+    public PlayerMovementController playerMovementController;
     //public fields
     public void OnFeedInput(InputAction.CallbackContext ctx)
     {
@@ -47,7 +47,7 @@ public class FeedTheAnimals : MonoBehaviour
         
         if (allFood)
         {
-            Debug.Log($"allFood started");
+            Debug.Log($"allFood started"); 
             //loop thru all food prefabs
                 for (int i = 0; i < foodCount; i++)
         {
@@ -69,15 +69,19 @@ public class FeedTheAnimals : MonoBehaviour
         }
 
     }
-    //dynamic method that gets binding from player input map
+    //dynamic method that gets binding from player input ma
 
     public void SelectFood(string keyName)
     {   
+        bool skipFeed = playerMovementController != null && playerMovementController.isBoosting;
         switch (keyName)
         {
             case "z":
-                FeedAnimal(0, 1, false);
-                Debug.Log($"z pressed");
+                if (!skipFeed)
+                {
+                 FeedAnimal(0, 1, false);
+                 Debug.Log($"z pressed"); 
+                }
                 break;
             case "x":
                 FeedAnimal(1, 1, false);

@@ -124,7 +124,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::AnimalControler
   foodItEats: {fileID: 8645667404381372486, guid: 4ce96533041994cce9c853de9d72a410,
     type: 3}
-  animalSpeed: 17
+  animalSpeed: 9
 --- !u!1 &102342
 GameObject:
   m_ObjectHideFlags: 0

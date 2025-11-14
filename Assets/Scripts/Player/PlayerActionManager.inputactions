@@ -23,6 +23,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Sprint",
+                    "type": "Button",
+                    "id": "ff231aa1-1e92-42da-b35e-dc05cd702ced",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -74,7 +83,7 @@
                     "name": "",
                     "id": "915632d6-8eaa-460e-b2b0-31d57748e3fd",
                     "path": "<Keyboard>/z",
-                    "interactions": "",
+                    "interactions": "Press(behavior=1)",
                     "processors": "",
                     "groups": "",
                     "action": "Feed",
@@ -122,6 +131,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "Feed",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "614388ae-ad8d-48bf-ad13-61fe2c39de8c",
+                    "path": "<Keyboard>/z",
+                    "interactions": "Hold",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Sprint",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
