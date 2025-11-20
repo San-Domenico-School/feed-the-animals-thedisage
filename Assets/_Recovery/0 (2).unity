@@ -879,9 +879,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2c8827eb5a6c4ec9940c5aec23a836f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  Instance: {fileID: 0}
   scoreText: {fileID: 0}
-  remainingText: {fileID: 0}
+  animalsRemainingText: {fileID: 0}
 --- !u!114 &1774589075
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1060,11 +1059,11 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 100046, guid: 0e1316a3e46fdb349b6ff648610a1d71,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1936512706}
+      addedObject: {fileID: 1936512709}
     - targetCorrespondingSourceObject: {fileID: 100046, guid: 0e1316a3e46fdb349b6ff648610a1d71,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1936512709}
+      addedObject: {fileID: 1936512708}
   m_SourcePrefab: {fileID: 100100000, guid: 0e1316a3e46fdb349b6ff648610a1d71, type: 3}
 --- !u!4 &1936512704 stripped
 Transform:
@@ -1078,19 +1077,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1936512703}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1936512706
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1936512705}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2a5c7fc13da114905a8369b515c19d09, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlayerMovementController
-  playerSpeed: 20
 --- !u!114 &1936512707
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1119,7 +1105,7 @@ MonoBehaviour:
   m_ActionEvents:
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1936512706}
+      - m_Target: {fileID: 1936512709}
         m_TargetAssemblyTypeName: PlayerMovementController, Assembly-CSharp
         m_MethodName: OnMovementInput
         m_Mode: 0
@@ -1135,7 +1121,7 @@ MonoBehaviour:
     m_ActionName: 'Player/Movement[/Keyboard/comma,/Keyboard/period]'
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1936512709}
+      - m_Target: {fileID: 1936512708}
         m_TargetAssemblyTypeName: FeedTheAnimals, Assembly-CSharp
         m_MethodName: OnFeedInput
         m_Mode: 0
@@ -1158,7 +1144,7 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
---- !u!114 &1936512709
+--- !u!114 &1936512708
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1170,12 +1156,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3dc8e63160118418dbe6a378293d9ca4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FeedTheAnimals
-  maxForce: 100
-  foods:
-  - {fileID: 126446, guid: c2f4b43f266dc11439efef86830dafb4, type: 3}
-  - {fileID: 8645667404381372486, guid: 4ce96533041994cce9c853de9d72a410, type: 3}
-  - {fileID: 101770, guid: c13306d1f1d9a1a489199ef77f9dba89, type: 3}
-  - {fileID: 646151965044568097, guid: da3306282c35e408e850d784419da031, type: 3}
+  maxForce: 0
+  foods: []
+--- !u!114 &1936512709
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1936512705}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a5c7fc13da114905a8369b515c19d09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerMovementController
+  playerSpeed: 0
 --- !u!1 &2144803725
 GameObject:
   m_ObjectHideFlags: 0
